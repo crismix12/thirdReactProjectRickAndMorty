@@ -32,7 +32,8 @@ const validateSearch = () => {
   return (
     <div className="App">
       <div className='header'>
-        <img className='header-banner' src='./assets/img/headerImg.webp' alt="" />   
+        {/* <img className='header-banner' src="./src/assets/img/headerImg.webp" alt="" />    */}
+        <img className='header-banner' src="https://cdn.shopify.com/s/files/1/0346/8063/5529/collections/rick-morty-collection-banner_1400x.jpg?v=1590095280" alt="" />   
       </div>
 
         <div className='content-container'>
