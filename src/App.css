@@ -7,7 +7,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  /* padding: 0rem; */
   text-align: center;
 }
 
@@ -17,7 +16,6 @@
   justify-content: space-around;
   text-align: left;
   margin-bottom: 1rem;
-  /* flex: 1; */
 }
 
 .header-child{
@@ -25,7 +23,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   flex: 1;
-  /* width: 25%; */
   font-size: 12px;
   line-height: 18px;
   font-weight: 600;
@@ -34,10 +31,6 @@
 .header-banner{
   width: 100%;
 }
-
-/* .content-container{
-  padding: 0 0rem;
-} */
 
 .search-bar{
   width: 50%;
@@ -49,7 +42,7 @@
 
 input::placeholder {
   color: gray;
-  font-size: 1.2em;
+  font-size: 0.8em;
   font-style: italic;
 }
 
@@ -66,7 +59,6 @@ input::placeholder {
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0px;
-  /* flex: 1; */
 }
 
 .character-item{
@@ -122,6 +114,10 @@ input::placeholder {
   .header-child{
     flex: none;
     font-size: 14px;
+  }
+
+  input::placeholder {
+    font-size: 1rem;
   }
 }
 

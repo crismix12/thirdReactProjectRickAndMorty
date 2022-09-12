@@ -10,8 +10,6 @@ const Characters = ({characterUrl}) => {
     useEffect(() =>{
         axios.get(characterUrl)
             .then(res => setCharacter(res.data))
-            // .finally(setStatusColor())
-
     }, [])
 
     useEffect(()=>{
@@ -25,9 +23,6 @@ const Characters = ({characterUrl}) => {
             setCharacterStatus("red");
         }
     }
-
-    // console.log(characterStatus);
-    // console.log(character);
 
     return (
         <li className='character-item'>

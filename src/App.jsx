@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-// import reactLogo from './assets/react.svg'
 import './App.css'
 import Characters from './components/Characters'
 
@@ -15,26 +14,20 @@ function App() {
     }
 
 const validateSearch = () => {
-  if(typeLocation === ""){
-    alert("Ingrese un ID");
-  }else if(typeLocation > 126 || typeLocation < 1){
-    alert("Ingrese un ID valido!")
-  }else{
-    searchLocation();
-  }
+    if(typeLocation === ""){
+      alert("Ingrese un ID");
+    }else if(typeLocation > 126 || typeLocation < 1){
+      alert("Ingrese un ID valido!")
+    }else{
+      searchLocation();
+    }
 }
 
   useEffect( () => {
-
     const randomId = Math.floor((Math.random() * 126) + 1)
-
     axios.get(`https://rickandmortyapi.com/api/location/${randomId}`)
         .then(res=> setLocation(res.data))
   }, [])
-
-
-
-  // console.log(location);
 
   return (
     <div className="App">
