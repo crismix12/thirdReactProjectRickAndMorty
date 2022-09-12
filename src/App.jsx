@@ -32,7 +32,7 @@ const validateSearch = () => {
   return (
     <div className="App">
       <div className='header'>
-        <img className='header-banner' src="./src/assets/img/headerImg.webp" alt="" />   
+        <img className='header-banner' src='./assets/img/headerImg.webp' alt="" />   
       </div>
 
         <div className='content-container'>
