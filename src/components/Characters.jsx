@@ -5,17 +5,34 @@ const Characters = ({characterUrl}) => {
 
     const [character, setCharacter] = useState({})
 
+    const [characterStatus, setCharacterStatus] = useState("")
+
     useEffect(() =>{
         axios.get(characterUrl)
             .then(res => setCharacter(res.data))
+            // .finally(setStatusColor())
+
     }, [])
 
+    useEffect(()=>{
+        setStatusColor()
+    }, [character])
+
+    const setStatusColor = () => {
+        if(character.status === "Alive"){
+            setCharacterStatus ("green");
+        }else if(character.status === "Dead"){
+            setCharacterStatus("red");
+        }
+    }
+
+    // console.log(characterStatus);
     // console.log(character);
 
     return (
         <li className='character-item'>
             <div className='character-card'>
-                <div className='status-container'> <div className='status-indicator'></div>{character.status}</div>
+                <div className='status-container'> <div className='status-indicator' style={{backgroundColor: `${characterStatus}`}}></div>{character.status}</div>
                 <img className='character-picture' src={character.image} alt="" />
                 <br />
                 <h3>{character.name}</h3>

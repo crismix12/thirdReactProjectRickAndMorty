@@ -17,6 +17,8 @@ function App() {
 const validateSearch = () => {
   if(typeLocation === ""){
     alert("Ingrese un ID");
+  }else if(typeLocation > 126 || typeLocation < 1){
+    alert("Ingrese un ID valido!")
   }else{
     searchLocation();
   }
@@ -32,7 +34,7 @@ const validateSearch = () => {
 
 
 
-  console.log(location);
+  // console.log(location);
 
   return (
     <div className="App">
@@ -43,18 +45,18 @@ const validateSearch = () => {
         <div className='content-container'>
             <section>
                 <input  className='search-bar' 
+                        placeholder='Ingrese un ID desde 1 hasta 126'
                         type="text"
                         value={typeLocation}
                         onChange = {e => setTypeLocation(e.target.value)}
                   />
-                  {/* <button onClick={searchLocation}>Search</button> */}
-                  <button onClick={validateSearch}>Search</button>
+                  <button className='searchBtn' onClick={validateSearch}>Search by ID</button>
               </section>
               <nav className='header-info'>
-                <p className='header-child'>Name: <p> {location.name} </p> </p>
-                <p className='header-child'>Type: <p> {location.type}</p></p>
-                <p className='header-child'>Dimension: <p>{location.dimension}</p> </p>  
-                <p className='header-child'>Population: <p>{location.residents?.length}</p></p>  
+                <p className='header-child'>Name: <br /> {location.name}  </p>
+                <p className='header-child'>Type: <br /> {location.type}</p>
+                <p className='header-child'>Dimension: <br /> {location.dimension}</p>  
+                <p className='header-child'>Population: <br /> {location.residents?.length}</p>  
               </nav>
 
               <ul className='characters-container'>
