@@ -14,6 +14,14 @@ function App() {
            .then(res=> setLocation(res.data))
     }
 
+const validateSearch = () => {
+  if(typeLocation === ""){
+    alert("Ingrese un ID");
+  }else{
+    searchLocation();
+  }
+}
+
   useEffect( () => {
 
     const randomId = Math.floor((Math.random() * 126) + 1)
@@ -33,24 +41,24 @@ function App() {
       </div>
 
         <div className='content-container'>
-              <nav className='header-info'>
-                <p>Name: <br /> {location.name}</p>
-                <p>Type: <br /> {location.type}</p>
-                <p>Dimension: <br /> {location.dimension}</p>  
-                <p>Population: <br /> {location.residents?.length}</p>  
-              </nav>
-              <section>
+            <section>
                 <input  className='search-bar' 
                         type="text"
                         value={typeLocation}
                         onChange = {e => setTypeLocation(e.target.value)}
                   />
-                  <button onClick={searchLocation}>Search</button>
+                  {/* <button onClick={searchLocation}>Search</button> */}
+                  <button onClick={validateSearch}>Search</button>
               </section>
+              <nav className='header-info'>
+                <p className='header-child'>Name: <p> {location.name} </p> </p>
+                <p className='header-child'>Type: <p> {location.type}</p></p>
+                <p className='header-child'>Dimension: <p>{location.dimension}</p> </p>  
+                <p className='header-child'>Population: <p>{location.residents?.length}</p></p>  
+              </nav>
+
               <ul className='characters-container'>
-                    {/* mas que filtrado es una lista de residentes de la posicion actual de la busqueda! */}
                     {location.residents?.map(resident => (
-                        // <li key={resident}>{resident}</li>
                         <Characters 
                         characterUrl={resident}
                         key = {resident}

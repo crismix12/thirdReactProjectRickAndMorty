@@ -15,16 +15,16 @@ const Characters = ({characterUrl}) => {
     return (
         <li className='character-item'>
             <div className='character-card'>
-                {/* <h1>PokemonItems</h1> */}
-                {/* {characterUrl} */}
-                {character.name}
-                <br />
+                <div className='status-container'> <div className='status-indicator'></div>{character.status}</div>
                 <img className='character-picture' src={character.image} alt="" />
                 <br />
-                {character.status}
-                <p>origin:</p>
+                <h3>{character.name}</h3>
+                <hr />
+                <p>Species: </p>
+                {character.species}
+                <p>Origin: </p>
                 {character.origin?.name}
-                <p>episodes where appear</p>
+                <p>Episodes where appear: </p>
                 {character.episode?.length}
             </div>
         </li>

@@ -16,7 +16,19 @@
   display: flex;
   justify-content: space-around;
   text-align: left;
-  font-size: 13px;
+  margin-bottom: 1rem;
+  /* flex: 1; */
+}
+
+.header-child{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1;
+  /* width: 25%; */
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 600;
 }
 
 .header-banner{
@@ -29,6 +41,8 @@
 
 .search-bar{
   width: 70%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .characters-container{
@@ -36,20 +50,79 @@
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0px;
+  /* flex: 1; */
 }
 
 .character-item{
-  width: 50%;
+  width: 100%;
   padding: 10px;
 }
 
 .character-card{
+  position: relative;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
   border-radius: 2px solid black;
   padding: 10px;
   height: 100%;
+  text-align: left;
 }
 
 .character-picture{
   width: 100%;
+}
+
+.character-card p{
+  font-size: 13px;
+  color: gray;
+  padding: 5px 0;
+}
+
+.status-container{
+  display: flex;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  background-color: gray;
+  width: 100px;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.status-indicator{
+  background-color: purple;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+@media (min-width: 558px){
+  .character-item{
+    width: 50%;
+  }
+
+  .header-child{
+    flex: none;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px){
+  .character-item{
+    width: 33.33333%;
+  }
+  .header-child{
+    flex: none;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 998px){
+  .character-item{
+    width: 25%;
+  }
+
+  .header-child{
+    flex: none;
+    font-size: 18px;
+  }
 }
